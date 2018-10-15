@@ -42,6 +42,6 @@
   "scripts": {
     "start": "meteor --no-release-check --settings ../config/settings.development.json",
     "lint": "eslint --quiet --ext .jsx --ext .js ./imports",
-    "clean:js": "del-cli ./imports/**/*.js ./imports/**/*.jsx ./client/**/*.js ./server/**/*.js"
+    "clean:js": "del-cli ./imports/**/*.js ./imports/**/*.js.map ./imports/**/*.jsx ./client/**/*.js ./client/**/*.js.map ./server/**/*.js ./server/**/*.js.map"
   }
 }
