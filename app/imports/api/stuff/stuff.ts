@@ -8,9 +8,9 @@ import simplSchema from 'simpl-schema';
 
 const name: string = 'Stuffs';
 
-console.time('Stuffs'); // tslint:disable-line
+// console.time('Stuffs'); // tslint:disable-line
 const Stuffs = new Mongo.Collection(name);
-console.timeEnd('Stuffs'); // tslint:disable-line
+// console.timeEnd('Stuffs'); // tslint:disable-line
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const StuffSchema = new simplSchema({
