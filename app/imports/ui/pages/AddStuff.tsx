@@ -17,13 +17,11 @@ class AddStuff extends React.Component {
   /** Bind 'this' so that a ref to the Form can be saved in formRef and communicated between render() and submit(). */
   constructor(props) {
     super(props);
-    this.submit = this.submit.bind(this);
-    this.insertCallback = this.insertCallback.bind(this);
     this.formRef = null;
   }
 
   /** Notify the user of the results of the submit. If successful, clear the form. */
-  public insertCallback(error) {
+  public insertCallback = (error) => {
     if (error) {
       Bert.alert({ type: 'danger', message: `Add failed: ${error.message}` });
     } else {
@@ -33,7 +31,7 @@ class AddStuff extends React.Component {
   }
 
   /** On submit, insert the data. */
-  public submit(data) {
+  public submit = (data) => {
     const { name, quantity, condition } = data;
     const owner = Meteor.user().username;
     Stuffs.insert({ name, quantity, condition, owner }, this.insertCallback);
