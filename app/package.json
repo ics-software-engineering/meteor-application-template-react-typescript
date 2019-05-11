@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.3.1",
+    "acorn": "^6.1.1",
     "classnames": "^2.2.6",
     "core-js": "^2.6.4",
     "graphql": "^0.8.2",
@@ -24,6 +25,8 @@
     "@types/meteor-roles": "^1.2.31",
     "@types/react": "^16.8.2",
     "@types/react-dom": "^16.8.0",
+    "@typescript-eslint/eslint-plugin": "^1.8.0",
+    "@typescript-eslint/parser": "^1.8.0",
     "babel-eslint": "^8.2.6",
     "del-cli": "^1.1.0",
     "eslint": "^5.13.0",
@@ -41,7 +44,7 @@
   },
   "scripts": {
     "start": "meteor --no-release-check --settings ../config/settings.development.json",
-    "lint": "eslint --quiet --ext .jsx --ext .js ./imports",
+    "lint": "eslint --fix --quiet --ext .tsx --ext .ts ./imports",
     "clean:js": "del-cli ./imports/**/*.js ./imports/**/*.js.map ./imports/**/*.jsx ./client/**/*.js ./client/**/*.js.map ./server/**/*.js ./server/**/*.js.map"
   }
 }

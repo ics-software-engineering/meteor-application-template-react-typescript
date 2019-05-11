@@ -1,3 +1,4 @@
+/* eslint-disable */
 declare module "meteor/mongo" {
   module Mongo {
     interface Collection<T> {

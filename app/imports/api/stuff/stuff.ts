@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { Tracker } from 'meteor/tracker';
-import simplSchema from 'simpl-schema';
+import SimplSchema from 'simpl-schema';
 
 /** Create a Meteor collection. */
 // console.log('creating collection stuffs');
@@ -13,7 +13,7 @@ const Stuffs = new Mongo.Collection(name);
 // console.timeEnd('Stuffs'); // tslint:disable-line
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
-const StuffSchema = new simplSchema({
+const StuffSchema = new SimplSchema({
   condition: {
     allowedValues: ['excellent', 'good', 'fair', 'poor'],
     defaultValue: 'good',

@@ -14,6 +14,7 @@ import { Stuffs, StuffSchema } from '../../api/stuff/stuff';
 /** Renders the Page for adding a document. */
 class AddStuff extends React.Component {
   private formRef: any;
+
   /** Bind 'this' so that a ref to the Form can be saved in formRef and communicated between render() and submit(). */
   constructor(props) {
     super(props);
@@ -40,21 +41,23 @@ class AddStuff extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   public render() {
     return (
-        <Grid container={true} centered={true}>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Add Stuff</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={StuffSchema} onSubmit={this.submit}>
-              <Segment>
-                <TextField name="name"/>
-                <NumField name="quantity" decimal={false}/>
-                <SelectField name="condition"/>
-                <SubmitField value="Submit"/>
-                <ErrorsField/>
-                <HiddenField name="owner" value="fakeuser@foo.com"/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
+      <Grid container={true} centered={true}>
+        <Grid.Column>
+          <Header as="h2" textAlign="center">Add Stuff</Header>
+          <AutoForm ref={(ref) => {
+            this.formRef = ref;
+          }} schema={StuffSchema} onSubmit={this.submit}>
+            <Segment>
+              <TextField name="name"/>
+              <NumField name="quantity" decimal={false}/>
+              <SelectField name="condition"/>
+              <SubmitField value="Submit"/>
+              <ErrorsField/>
+              <HiddenField name="owner" value="fakeuser@foo.com"/>
+            </Segment>
+          </AutoForm>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

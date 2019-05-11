@@ -1,13 +1,15 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "project": "./tsconfig.json"
   },
   "plugins": [
+    "@typescript-eslint",
     "meteor",
     "react"
   ],
@@ -43,6 +45,7 @@
     "no-confusing-arrow": ["error", {"allowParens": true}],
     "no-plusplus": "off",
     "no-underscore-dangle": "off",
+    "no-useless-constructor": "off",
     "object-curly-newline": "off",
     "object-property-newline": "off",
     "object-shorthand": "off",

@@ -1,4 +1,5 @@
 /* Declaring in the format prescribed by Meteor */
+/* eslint-disable */
 declare module "meteor/alanning:roles" {
   namespace Roles {
     /**
