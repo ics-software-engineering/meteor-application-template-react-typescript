@@ -34,3 +34,10 @@ Meteor.publish('StuffAdmin', function publish() {
   }
   return this.ready();
 });
+
+Meteor.publish(null, function () {
+  if (this.userId) {
+    return Meteor.roleAssignment.find({ 'user._id': this.userId });
+  }
+  return this.ready();
+});
