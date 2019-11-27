@@ -51,8 +51,8 @@ class AddStuff extends React.Component {
               <TextField name="name"/>
               <NumField name="quantity" decimal={false}/>
               <SelectField name="condition"/>
-              <SubmitField value="Submit"/>
-              <ErrorsField/>
+              <SubmitField value="Submit" className={''} disabled={false} inputRef={undefined}/>
+              <ErrorsField className={''} children={undefined}/>
               <HiddenField name="owner" value="fakeuser@foo.com"/>
             </Segment>
           </AutoForm>
