@@ -3,14 +3,9 @@ import { Tracker } from 'meteor/tracker';
 import SimplSchema from 'simpl-schema';
 
 /** Create a Meteor collection. */
-// console.log('creating collection stuffs');
-// console.trace('creating collection stuffs');
-
 const name: string = 'Stuffs';
 
-// console.time('Stuffs'); // tslint:disable-line
 const Stuffs = new Mongo.Collection(name);
-// console.timeEnd('Stuffs'); // tslint:disable-line
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const StuffSchema = new SimplSchema({

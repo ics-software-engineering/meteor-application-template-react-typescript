@@ -35,6 +35,7 @@ class AddStuff extends React.Component {
   public submit = (data) => {
     const { name, quantity, condition } = data;
     const owner = Meteor.user().username;
+    // @ts-ignore
     Stuffs.insert({ name, quantity, condition, owner }, this.insertCallback);
   }
 
@@ -52,7 +53,7 @@ class AddStuff extends React.Component {
               <NumField name="quantity" decimal={false}/>
               <SelectField name="condition"/>
               <SubmitField value="Submit" className={''} disabled={false} inputRef={undefined}/>
-              <ErrorsField className={''} children={undefined}/>
+              <ErrorsField className={''}/>
               <HiddenField name="owner" value="fakeuser@foo.com"/>
             </Segment>
           </AutoForm>

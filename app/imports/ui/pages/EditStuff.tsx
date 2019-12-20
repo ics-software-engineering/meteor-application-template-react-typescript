@@ -45,7 +45,7 @@ class EditStuff extends React.Component<IEditStuffProps, object> {
                 <NumField name="quantity" decimal={false}/>
                 <SelectField name="condition"/>
                 <SubmitField value="Submit" className={''} disabled={false} inputRef={undefined}/>
-                <ErrorsField className={''} children={undefined}/>
+                <ErrorsField className={''}/>
                 <HiddenField name="owner" />
               </Segment>
             </AutoForm>

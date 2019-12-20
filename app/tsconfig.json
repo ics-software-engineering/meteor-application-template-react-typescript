@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
     "alwaysStrict": true,
@@ -9,8 +9,7 @@
     "sourceMap": true,
     "jsx": "react",
     "lib": [
-      "dom",
-      "es2015"
+      "dom"
     ],
     "allowJs": false,
     "noImplicitAny": false,
