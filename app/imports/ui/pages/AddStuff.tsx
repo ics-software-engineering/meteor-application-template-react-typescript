@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+// @ts-ignore
 import { Bert } from 'meteor/themeteorchef:bert';
 import * as React from 'react';
 import { Grid, Header, Segment } from 'semantic-ui-react';
@@ -35,6 +36,7 @@ class AddStuff extends React.Component {
   public submit = (data) => {
     const { name, quantity, condition } = data;
     const owner = Meteor.user().username;
+    // @ts-ignore
     Stuffs.insert({ name, quantity, condition, owner }, this.insertCallback);
   }
 

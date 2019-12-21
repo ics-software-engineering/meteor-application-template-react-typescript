@@ -37,6 +37,7 @@ Meteor.publish('StuffAdmin', function publish() {
 
 Meteor.publish(null, function () {
   if (this.userId) {
+    // @ts-ignore
     return Meteor.roleAssignment.find({ 'user._id': this.userId });
   }
   return this.ready();
