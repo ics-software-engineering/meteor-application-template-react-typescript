@@ -3,13 +3,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Bert } from 'meteor/themeteorchef:bert';
 import * as React from 'react';
 import { Grid, Header, Loader, Segment } from 'semantic-ui-react';
-import AutoForm from 'uniforms-semantic/AutoForm';
-import ErrorsField from 'uniforms-semantic/ErrorsField';
-import HiddenField from 'uniforms-semantic/HiddenField';
-import NumField from 'uniforms-semantic/NumField';
-import SelectField from 'uniforms-semantic/SelectField';
-import SubmitField from 'uniforms-semantic/SubmitField';
-import TextField from 'uniforms-semantic/TextField';
+import { AutoForm, TextField, NumField, SelectField, SubmitField, ErrorsField, HiddenField } from 'uniforms-semantic';
 import { Stuffs, StuffSchema } from '../../api/stuff/stuff';
 
 interface IEditStuffProps {
