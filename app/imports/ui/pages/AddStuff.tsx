@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-// @ts-ignore
-import { Bert } from 'meteor/themeteorchef:bert';
+import swal from 'sweetalert';
 import * as React from 'react';
 import { Grid, Header, Segment } from 'semantic-ui-react';
 import { AutoForm, TextField, NumField, SelectField, SubmitField, ErrorsField, HiddenField } from 'uniforms-semantic';
@@ -19,12 +18,12 @@ class AddStuff extends React.Component {
   /** Notify the user of the results of the submit. If successful, clear the form. */
   public insertCallback = (error) => {
     if (error) {
-      Bert.alert({ type: 'danger', message: `Add failed: ${error.message}` });
+      swal('Error', error.message, 'error');
     } else {
-      Bert.alert({ type: 'success', message: 'Add succeeded' });
+      swal('Success', 'Item added successfully', 'success');
       this.formRef.reset();
     }
-  }
+  };
 
   /** On submit, insert the data. */
   public submit = (data) => {
@@ -32,7 +31,7 @@ class AddStuff extends React.Component {
     const owner = Meteor.user().username;
     // @ts-ignore
     Stuffs.insert({ name, quantity, condition, owner }, this.insertCallback);
-  }
+  };
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   public render() {

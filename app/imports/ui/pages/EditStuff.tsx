@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Bert } from 'meteor/themeteorchef:bert';
+import swal from 'sweetalert';
 import * as React from 'react';
 import { Grid, Header, Loader, Segment } from 'semantic-ui-react';
 import { AutoForm, TextField, NumField, SelectField, SubmitField, ErrorsField, HiddenField } from 'uniforms-semantic';
@@ -18,8 +18,8 @@ class EditStuff extends React.Component<IEditStuffProps, object> {
   public submit(data) {
     const { name, quantity, condition, _id } = data;
     Stuffs.update(_id, { $set: { name, quantity, condition } }, {}, (error) => (error ?
-        Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
-        Bert.alert({ type: 'success', message: 'Update succeeded' })));
+      swal('Error', error.message, 'error') :
+      swal('Success', 'Item updated successfully', 'success')));
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
