@@ -5,7 +5,7 @@
     "start": "meteor --no-release-check --settings ../config/settings.development.json",
     "lint": "eslint --fix --quiet --ext .tsx --ext .ts ./imports",
     "test": "meteor test --once --driver-package meteortesting:mocha",
-    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha"
+    "test-app": "cross-env TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
@@ -37,6 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0",
     "babel-eslint": "^10.0.3",
+    "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-react-app": "^5.1.0",
@@ -46,6 +47,7 @@
     "eslint-plugin-meteor": "^6.0.0",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "puppeteer": "^2.0.0",
     "typescript": "^3.7.4"
   },
   "eslintConfig": {
