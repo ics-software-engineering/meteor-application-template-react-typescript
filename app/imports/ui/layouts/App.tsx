@@ -45,14 +45,16 @@ class App extends React.Component {
  * Checks for Meteor login before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
  */
-const ProtectedRoute = ({ component: Component, ...rest }) => ( // eslint-disable-line
+// eslint-disable-next-line react/prop-types
+const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={(props) => {
       const isLogged = Meteor.userId() !== null;
       return isLogged ?
           (<Component {...props} />) :
-          (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>); // eslint-disable-line
+        // eslint-disable-next-line react/prop-types
+          (<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />);
     }}
   />
 );
@@ -62,7 +64,8 @@ const ProtectedRoute = ({ component: Component, ...rest }) => ( // eslint-disabl
  * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
  */
-const AdminProtectedRoute = ({ component: Component, ...rest }) => ( // eslint-disable-line
+// eslint-disable-next-line react/prop-types
+const AdminProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={(props) => {
@@ -70,7 +73,8 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => ( // eslint-d
           const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin');
           return (isLogged && isAdmin) ?
               (<Component {...props} />) :
-              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>); // eslint-disable-line
+            // eslint-disable-next-line react/prop-types
+              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />);
         }}
   />
 );

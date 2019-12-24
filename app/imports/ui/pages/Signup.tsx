@@ -24,7 +24,7 @@ export default class Signup extends React.Component<object, ISignupState> {
     const change = {};
     change[e.target.name] = e.target.value;
     this.setState(change);
-  }
+  };
 
   /** Handle Signup submission using Meteor's account mechanism. */
   public handleSubmit = () => {
@@ -36,7 +36,7 @@ export default class Signup extends React.Component<object, ISignupState> {
         // browserHistory.push('/login');
       }
     });
-  }
+  };
 
   /** Display the signup form. */
   public render() {
