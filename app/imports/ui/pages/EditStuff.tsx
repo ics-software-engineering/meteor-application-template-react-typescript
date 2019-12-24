@@ -24,27 +24,27 @@ class EditStuff extends React.Component<IEditStuffProps, object> {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   public render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active={true}>Getting data</Loader>;
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   public renderPage() {
     return (
-        <Grid container={true} centered={true}>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Stuff</Header>
-            <AutoForm schema={StuffSchema} onSubmit={this.submit} model={this.props.doc}>
-              <Segment>
-                <TextField name="name"/>
-                <NumField name="quantity" decimal={false}/>
-                <SelectField name="condition"/>
-                <SubmitField value="Submit"/>
-                <ErrorsField/>
-                <HiddenField name="owner" />
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
+      <Grid container centered>
+        <Grid.Column>
+          <Header as="h2" textAlign="center">Edit Stuff</Header>
+          <AutoForm schema={StuffSchema} onSubmit={this.submit} model={this.props.doc}>
+            <Segment>
+              <TextField name="name" />
+              <NumField name="quantity" decimal={false} />
+              <SelectField name="condition" />
+              <SubmitField value="Submit" />
+              <ErrorsField />
+              <HiddenField name="owner" />
+            </Segment>
+          </AutoForm>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

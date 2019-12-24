@@ -3,7 +3,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import * as React from 'react';
 import { Container, Header, Loader, Table } from 'semantic-ui-react';
 import { Stuffs } from '../../api/stuff/stuff';
-import StuffItemAdmin from '../../ui/components/StuffItemAdmin';
+import StuffItemAdmin from '../components/StuffItemAdmin';
 
 interface IListStuffAdminProps {
   ready: boolean;
@@ -15,28 +15,28 @@ class ListStuffAdmin extends React.Component<IListStuffAdminProps, object> {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   public render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active={true}>Getting data</Loader>;
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
   /** Render the page once subscriptions have been received. */
   public renderPage() {
     return (
-        <Container>
-          <Header as="h2" textAlign="center">List Stuff (Admin)</Header>
-          <Table celled={true}>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Quantity</Table.HeaderCell>
-                <Table.HeaderCell>Condition</Table.HeaderCell>
-                <Table.HeaderCell>Owner</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {this.props.stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff} />)}
-            </Table.Body>
-          </Table>
-        </Container>
+      <Container>
+        <Header as="h2" textAlign="center">List Stuff (Admin)</Header>
+        <Table celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell>Quantity</Table.HeaderCell>
+              <Table.HeaderCell>Condition</Table.HeaderCell>
+              <Table.HeaderCell>Owner</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {this.props.stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff} />)}
+          </Table.Body>
+        </Table>
+      </Container>
     );
   }
 }

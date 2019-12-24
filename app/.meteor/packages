@@ -35,3 +35,4 @@ ejson@1.1.0                            # https://docs.meteor.com/api/ejson.html
 insecure@1.0.7                         # Enable client-side manipulation of Mongo collections.
 alanning:roles
 typescript
+meteortesting:mocha

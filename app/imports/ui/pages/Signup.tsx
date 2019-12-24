@@ -41,50 +41,52 @@ export default class Signup extends React.Component<object, ISignupState> {
   /** Display the signup form. */
   public render() {
     return (
-        <Container>
-          <Grid textAlign="center" verticalAlign="middle" centered={true} columns={2}>
-            <Grid.Column>
-              <Header as="h2" textAlign="center">
+      <Container>
+        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+          <Grid.Column>
+            <Header as="h2" textAlign="center">
                 Register your account
-              </Header>
-              <Form onSubmit={this.handleSubmit}>
-                <Segment stacked={true}>
-                  <Form.Input
-                      label="Email"
-                      icon="user"
-                      iconPosition="left"
-                      name="email"
-                      type="email"
-                      placeholder="E-mail address"
-                      onChange={this.handleChange}
-                  />
-                  <Form.Input
-                      label="Password"
-                      icon="lock"
-                      iconPosition="left"
-                      name="password"
-                      placeholder="Password"
-                      type="password"
-                      onChange={this.handleChange}
-                  />
-                  <Form.Button content="Submit"/>
-                </Segment>
-              </Form>
-              <Message>
-                Already have an account? Login <Link to="/signin">here</Link>
-              </Message>
-              {this.state.error === '' ? ( // tslint:disable-line
+            </Header>
+            <Form onSubmit={this.handleSubmit}>
+              <Segment stacked>
+                <Form.Input
+                  label="Email"
+                  icon="user"
+                  iconPosition="left"
+                  name="email"
+                  type="email"
+                  placeholder="E-mail address"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  label="Password"
+                  icon="lock"
+                  iconPosition="left"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  onChange={this.handleChange}
+                />
+                <Form.Button content="Submit" />
+              </Segment>
+            </Form>
+            <Message>
+                Already have an account? Login
+              {' '}
+              <Link to="/signin">here</Link>
+            </Message>
+            {this.state.error === '' ? ( // tslint:disable-line
                   ''
               ) : (
-                  <Message
-                      error={true}
-                      header="Registration was not successful"
-                      content={this.state.error}
-                  />
+                <Message
+                  error
+                  header="Registration was not successful"
+                  content={this.state.error}
+                />
               )}
-            </Grid.Column>
-          </Grid>
-        </Container>
+          </Grid.Column>
+        </Grid>
+      </Container>
     );
   }
 }
