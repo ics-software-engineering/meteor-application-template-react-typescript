@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 import * as React from 'react';
 import { Grid, Header, Segment } from 'semantic-ui-react';
 import { AutoForm, TextField, NumField, SelectField, SubmitField, ErrorsField, HiddenField } from 'uniforms-semantic';
@@ -18,9 +18,9 @@ class AddStuff extends React.Component {
   /** Notify the user of the results of the submit. If successful, clear the form. */
   public insertCallback = (error) => {
     if (error) {
-      swal('Error', error.message, 'error');
+      Swal.fire('Error', error.message, 'error');
     } else {
-      swal('Success', 'Item added successfully', 'success');
+      Swal.fire('Success', 'Item added successfully', 'success');
       this.formRef.reset();
     }
   };
